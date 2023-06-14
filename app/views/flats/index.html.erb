@@ -1,0 +1,24 @@
+
+<div class="container">
+<h1>All our Flats (<%= @flats.size %>)</h1>
+  <div class="d-flex justify-content-evenly"">
+    <% @flats.each do |flat| %>
+      <div class="card" style="width: 300px">
+        <%= image_tag flat.url, class:"img" %>
+        <div class="card-body">
+          <h3  class="card-title"><%= flat.name %></h3>
+          <p class="card-text"><%= flat.address %></p>
+          <br>
+          <p class="card-text infos"><i class="fa-solid fa-people-group"></i> <%= flat.number_of_guests %> <i class="fa-solid fa-euro-sign"></i> <%= flat.price_per_night %></p>
+          <br>
+          <br>
+          <div class="buttons">
+            <button><%= link_to 'More infos', flat_path(flat), class:"link" %></button>
+            <button><%= link_to 'Edit', edit_flat_path(flat), class:"link" %></button>
+            <button><%= link_to 'Remove', flat_path(flat), class:"link", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'} %></button>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

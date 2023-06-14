@@ -1,0 +1,37 @@
+<%= image_tag @flat.url %>
+
+
+<div class="card">
+  <div class="card-body">
+    <h1><%= @flat.name %></h1>
+    <p><%= @flat.address %></p>
+  </div>
+</div>
+<div class="card">
+  <div class="card-body">
+    <h1>A bit more about this flat...</h1>
+    <p><%= @flat.description %></p>
+  </div>
+</div>
+<div class="card">
+  <div class="card-body">
+    <h1>Details</h1>
+    <p><i class="fa-solid fa-people-group"></i> <%= @flat.number_of_guests %> <i class="fa-solid fa-euro-sign"></i> <%= @flat.price_per_night %></p>
+  </div>
+</div>
+<div class="form-book d-grid gap-2">
+  <form action="book">
+    <h3>Book this place!</h3>
+      <label for="from">From</label>
+      <input type="date" placeholder="03/10/2023">
+      <label for="to">To</label>
+      <input type="date" placeholder="10/10/2023">
+      <button class="btn btn-primary" type="button">Book</button>
+  </form>
+</div>
+<div class="card-share d-flex justify-content-between">
+  <p>Share</p>
+  <p><i class="fa-brands fa-facebook"></i><i class="fa-brands fa-instagram"></i><i class="fa-brands fa-twitter"></i></p>
+</div>
+
+<%= link_to 'Back', flats_path %>
